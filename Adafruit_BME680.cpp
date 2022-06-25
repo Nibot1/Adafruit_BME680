@@ -281,6 +281,15 @@ float Adafruit_BME680::readAltitude(float seaLevel) {
   return 44330.0 * (1.0 - pow(atmospheric / seaLevel, 0.1903));
 }
 
+bool Adafruit_BME680::setOpMode(uint8_t opMode) {
+  int8_t rslt = bme68x_set_op_mode(opMode, &gas_sensor);
+
+  if (rslt != BME68X_OK)
+    return false;
+  
+  return true;
+}
+
 /*!
  *  @brief  Performs a full reading of all 4 sensors in the BME680.
  *          Assigns the internal Adafruit_BME680#temperature,

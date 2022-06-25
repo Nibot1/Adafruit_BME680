@@ -89,6 +89,8 @@ public:
   bool setGasHeater(uint16_t heaterTemp, uint16_t heaterTime);
   bool setODR(uint8_t odr);
 
+  bool setOpMode(uint8_t opMode);
+
   // Perform a reading in blocking mode.
   bool performReading();
 
